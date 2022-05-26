@@ -17,7 +17,7 @@ import {
 import { FiChevronDown, FiMenu } from 'react-icons/fi';
 
 import { NavbarProps } from './types';
-import Auth from '../../core/auth';
+
 
 
 
@@ -68,7 +68,7 @@ const Navbar = ({ onOpen, ...rest }: NavbarProps) => {
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2">
-                  <Text fontSize="sm">{Auth.getCurrentUser()}</Text>
+                  <Text fontSize="sm">Usuario</Text>
                   {/* <Text fontSize="xs" color="gray.600">
                     Auth
                   </Text> */}
@@ -85,7 +85,7 @@ const Navbar = ({ onOpen, ...rest }: NavbarProps) => {
               <MenuItem>Settings</MenuItem>
               <MenuItem>Billing</MenuItem>
               <MenuDivider />
-              <MenuItem onClick={() => Auth.signOut()}>Sign out</MenuItem>
+              
             </MenuList>
           </Menu>
         </Flex>
