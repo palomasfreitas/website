@@ -36,7 +36,7 @@ const Cartinha = (props: any) => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber] = useState(1);
 
-  const onDocumentLoadSuccess = ({ }) => {
+  const onDocumentLoadSuccess = () => {
     setNumPages(numPages);
   };
     
