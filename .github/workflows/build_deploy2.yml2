@@ -1,0 +1,66 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy to Firebase
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build_test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      # Runs package scripts
+      - name: Install Dependencies and Build Artifact
+        env:
+          NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY: ${{ secrets.FIREBASE_PUBLIC_API_KEY }}
+          NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
+          NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          NEXT_PUBLIC_FIREBASE_DATABASE_URL: ${{ secrets.FIREBASE_DATABASE_URL }}
+          NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
+          NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}
+          NEXT_PUBLIC_FIREBASE_APPID: ${{ secrets.FIREBASE_APPID }}
+          NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
+        run: |
+          npm ci
+          npm run build --if-present
+
+      - name: Unit tests
+        run: npm run test:ci
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: assets
+          path: |
+            out/
+            firebase.json
+            .firebaserc
+
+  deploy:
+    name: Deploy to Firebase
+    needs: build_test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: assets
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MOSAICO_WEBSITE_AF329 }}'
+          channelId: live
+          projectId: palomafreitas-4f1eb
