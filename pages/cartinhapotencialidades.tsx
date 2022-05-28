@@ -1,12 +1,38 @@
 import React, { useState } from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
+
 import { FaWhatsapp } from 'react-icons/fa';
 import type { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
+import ReactPDF from '@react-pdf/renderer';
 
+import { Image as pdfImage } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet,PDFViewer } from '@react-pdf/renderer';
 
+// Create styles
+const styles = StyleSheet.create({
+  page: {
+    flexDirection: 'row',
+    backgroundColor: '#E4E4E4'
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    flexGrow: 1
+  }
+});
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+const MyDocument = () => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      <View style={styles.section}>
+        <Text>Section #1</Text>
+        
+      </View>
+    </Page>
+  </Document>
+);
+
+//pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 //import samplePDF from '/cartinha.pdf';
 
@@ -22,6 +48,8 @@ import {
   Stack,
   
   VStack,
+
+  Image,
   
 } from '@chakra-ui/react';
 
@@ -43,18 +71,14 @@ const Cartinha = (props: any) => {
 
   return (
       
-    <Stack bgColor={'purple.200'}  align={'center'} justify={'center'} >
+    <Stack bgColor={'gray.100'}  align={'center'} justify={'center'} >
       <VStack  w={'80%'} direction={{ base: 'column', md: 'row' }}>
-        <Heading  as='h3' size='lg' color={'purple.700'} paddingBottom={2}>
+        <Heading  as='h3' size='lg' color={'gray.600'} paddingBottom={2}>
           Cartinha Potencialidades
         </Heading>
-        <Box   maxW={'99%'} borderRadius={2} boxShadow='lg'  rounded='xl' bg='white'>
-          <Document
-            file="/cartinha.pdf"
-            onLoadSuccess={onDocumentLoadSuccess}
-          >
-            <Page pageNumber={pageNumber} />
-          </Document>
+        <Box   maxW={'90%'} borderRadius={2} boxShadow='2xl'  rounded='xl' bg='white' marginBottom={15}>
+          <Image src='/cartinhap1.jpg'/>
+          <Image src='/cartinhap2.jpg'/>
         </Box> 
       </VStack>
     </Stack>
