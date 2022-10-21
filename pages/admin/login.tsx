@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { GetStaticProps } from 'next';
 import { Flex, Stack, Image, Button } from '@chakra-ui/react';
 
-
+import { LoginForm } from '../../components';
 
 export const getStaticProps: GetStaticProps = async () => ({
   props: {
@@ -37,7 +37,7 @@ const Login = () => {
             <Button p={6}> Volte para PalomaFreitas.com</Button>
           </a>
         </Stack>
-
+        <LoginForm onRedirect={onRedirect} />
       </Stack>
     </Flex>
   );

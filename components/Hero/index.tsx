@@ -38,9 +38,14 @@ const Hero = () => {
         </Button>
       </a>
 
-      <a href='./grupoansiedade' >
+      <a href='./grupoansiedade.html' >
         <Button marginTop={1}  _hover={{ bg: '#F765A3', color: '#F9D1D1'}} shadow={'2xl'}  color='white' bgColor='#FFA4B6' w={[300, 400, 500]}>
           Grupo Manejo de Ansiedade
+        </Button>
+      </a>
+      <a href='./grupohabvida.html' >
+        <Button marginTop={1}  _hover={{ bg: '#F765A3', color: '#F9D1D1'}} shadow={'2xl'}  color='white' bgColor='#FFA4B6' w={[300, 400, 500]}>
+          Grupo Habilidades para a Vida
         </Button>
       </a>
 
