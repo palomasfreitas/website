@@ -1,5 +1,5 @@
 import React from 'react';
-import {  FaLinkedin, FaMediumM, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import {  FaLinkedin, FaMediumM, FaInstagram, FaWhatsapp, FaFilePdf } from 'react-icons/fa';
 import { RiArticleLine } from 'react-icons/ri';
 
 import { MdSettings } from 'react-icons/md';
@@ -37,7 +37,11 @@ const Hero = () => {
           Agendamentos
         </Button>
       </a>
-
+      <a href='./pdf/atividadesprazerosas.pdf' >
+        <Button marginTop={1}  _hover={{ bg: '#F765A3', color: '#F9D1D1'}} shadow={'2xl'}  color='white' bgColor='#FFA4B6' w={[300, 400, 500]} leftIcon={<FaFilePdf />}>
+          Atividades Prazerosas
+        </Button>
+      </a>
       <a href='./grupoansiedade' >
         <Button marginTop={1}  _hover={{ bg: '#F765A3', color: '#F9D1D1'}} shadow={'2xl'}  color='white' bgColor='#FFA4B6' w={[300, 400, 500]}>
           Grupo Manejo de Ansiedade
