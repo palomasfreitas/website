@@ -37,11 +37,7 @@ const Hero = () => {
           Agendamentos
         </Button>
       </a>
-      <a href='./pdf/atividadesprazerosas.pdf' >
-        <Button marginTop={1}  _hover={{ bg: '#F765A3', color: '#F9D1D1'}} shadow={'2xl'}  color='white' bgColor='#FFA4B6' w={[300, 400, 500]} leftIcon={<FaFilePdf />}>
-          Atividades Prazerosas
-        </Button>
-      </a>
+      
       <a href='./grupoansiedade' >
         <Button marginTop={1}  _hover={{ bg: '#F765A3', color: '#F9D1D1'}} shadow={'2xl'}  color='white' bgColor='#FFA4B6' w={[300, 400, 500]}>
           Grupo Manejo de Ansiedade
@@ -52,7 +48,7 @@ const Hero = () => {
           Grupo Habilidades para a Vida
         </Button>
       </a>
-
+      
       <a href='http://www.institutodrtiagoqueiroz.com.br/' >
         <Button marginTop={1}  _hover={{ bg: '#F765A3', color: '#F9D1D1'}} shadow={'2xl'}  color='white' bgColor='#FFA4B6' w={[300, 400, 500]}>
             Instituto Dr. Tiago Queiroz
@@ -63,6 +59,16 @@ const Hero = () => {
         <Button marginTop={1}  _hover={{ bg: '#F765A3', color: '#F9D1D1'}} shadow={'2xl'}  color='white' bgColor='#FFA4B6' w={[300, 400, 500]} leftIcon={<RiArticleLine />}>
           Artigos
         </Button></a>
+      <a href='./pdf/cadernodaautoestima.pdf' >
+        <Button marginTop={1}  _hover={{ bg: '#F765A3', color: '#F9D1D1'}} shadow={'2xl'}  color='white' bgColor='#FFA4B6' w={[300, 400, 500]} leftIcon={<FaFilePdf />}>
+          Caderno da Autoestima
+        </Button>
+      </a>
+      <a href='./pdf/atividadesprazerosas.pdf' >
+        <Button marginTop={1}  _hover={{ bg: '#F765A3', color: '#F9D1D1'}} shadow={'2xl'}  color='white' bgColor='#FFA4B6' w={[300, 400, 500]} leftIcon={<FaFilePdf />}>
+          Atividades Prazerosas
+        </Button>
+      </a>
 
 
 
