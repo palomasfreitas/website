@@ -1,62 +1,38 @@
-# Basic-vite
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-#### Easy start your frontend project
-Ready Frontend project sturtup, setup with Vite Startup Setup with React, Typescript Tailwind css, HeadlessUi, HeroIcons, ApolloClient with GraphQL and Layout Route.
+## Getting Started
 
-<table align="center" style="border: none; text-align: center;" cellspacing="0" cellpadding="0">
-<tr>
-<td align="center"><img src="https://seeklogo.com/images/V/vite-logo-BFD4283991-seeklogo.com.png" width=100px /></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" width=100px /></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" width=100px /></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png" width=100px /></td>
-<td align="center" ><img src="https://global.discourse-cdn.com/business5/uploads/apollographql/original/1X/25bd5104d61020fe4dc0777a5919cd009bca633e.png" width=100px /></td>
-<td align="center"  ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/2048px-GraphQL_Logo.svg.png" width=100px /></td>
-</tr>
-<tr>
-<td align="center">Vite</td>
-<td align="center">React</td>
-<td align="center">Typescript</td>
-<td align="center">Tailwind css</td>
-<td align="center">Apollo Client</td>
-<td align="center">GraphQL</td>
-</tr>
+First, run the development server:
 
-</table>
-</br>
-<p align="center"><strong>Tailwind suite ready:</strong></p>
-<table align="center" style="border: none; text-align: center;" cellspacing="0" cellpadding="0">
-<tr>
-<td align="center"><img src="https://repository-images.githubusercontent.com/295992065/4bd52200-0043-11eb-9711-359a3854d4dc" width=200px /></td>
-<td align="center"><img src="https://heroicons.com/_next/static/media/social-card.fefc68e0.jpg" width=200px /></td>
-
-</tr>
-<tr>
-<td align="center">HeadlessUI</td>
-<td align="center">HeroIcons</td>
-
-
-</tr>
-
-</table>
-
-## Installation
-
-#### Clone the project
-````
-git clone https://github.com/rqfreitas/basic-vite.git
-````
-#### Access created folder
-````
-cd basic-vite
-````
-#### Install required libraries(dependencies)
-````
-npm install
-````
-#### Run
-````
+```bash
 npm run dev
-````
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-## Layout
-Routes already using React "Outlet"
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

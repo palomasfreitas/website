@@ -2,7 +2,7 @@ import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 
-import NavBar from '../components/Navbar';
+// import NavBar from '../components/Navbar';
 
 
 
