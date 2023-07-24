@@ -27,7 +27,7 @@ export default function Home() {
               Psicóloga Clínica - CRP 02/17441
         </div>
       </div>
-      
+      <LinkTreeButton link="https://docs.google.com/forms/d/e/1FAIpQLSet4gtutQmYiO1RUGY0ZmpxU5ckjmNdT8IPwFOP-Xe0IyuBAA/viewform" texto="Grupo - Habilidade pra Vida" />
       <LinkTreeButton link="/oficina" texto="Oficina - Construindo a autoestima do seu filho" />
       <LinkTreeButton link="https://api.whatsapp.com/send?phone=5581996110403" texto="<FaWhatsapp /> Agendamentos" />
       <LinkTreeButton link="http://www.institutodrtiagoqueiroz.com.br/" texto="Instituto Dr. Tiago Queiroz" />
