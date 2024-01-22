@@ -27,6 +27,7 @@ export default function Home() {
               Psicóloga Clínica - CRP 02/17441
         </div>
       </div>
+      <LinkTreeButton link="https://drive.google.com/file/d/1eD84wEuGO3FzD6dG5PF9E5E-4KCBYmPg/view?usp=sharing" texto="Roda da Vida" />
       <LinkTreeButton link="https://docs.google.com/forms/d/e/1FAIpQLSet4gtutQmYiO1RUGY0ZmpxU5ckjmNdT8IPwFOP-Xe0IyuBAA/viewform" texto="Grupo - Habilidade pra Vida" />
       <LinkTreeButton link="/oficina" texto="Oficina - Construindo a autoestima do seu filho" />
       <LinkTreeButton link="https://api.whatsapp.com/send?phone=5581996110403" texto="<FaWhatsapp /> Agendamentos" />
