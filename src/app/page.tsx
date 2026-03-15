@@ -1,68 +1,87 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import {  FaLinkedin, FaMediumM, FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import { RiArticleLine } from 'react-icons/ri';
-import './global.css'
-import { MdSettings } from 'react-icons/md';
-
-
-
+import { FaMediumM, FaInstagram, FaWhatsapp, FaBook, FaRegFolderOpen } from 'react-icons/fa';
+import './globals.css'
 import LinkTreeButton from '../components/LinkTreeButton';
-
-
-const inter = Inter({ subsets: ['latin'] })
+import LinkTreeDropdown from '../components/LinkTreeDropdown';
 
 export default function Home() {
   return (
-    <>
-      <div className=' grid grid-cols-1 min-h-screen m-auto justify-center bg-green-200' >
-      
-      <div className='perfil m-auto text-center'>
-        <img className="w-36 h-36 m-auto rounded-full shadow-md shadow-slate-700" src="/insta.jpeg" alt="Rounded avatar" />
+    <main className='animate-fade-in flex flex-col items-center justify-center min-h-screen px-4 py-12 max-w-[600px] mx-auto'>
 
-        <div className='pt-3 text-base font-normal text-green-600 pb-1' >
-              Paloma Freitas
+      {/* Profile Section */}
+      <section className='text-center mb-12'>
+        <div className='relative inline-block mb-6'>
+          <img
+            className="w-32 h-32 rounded-full profile-shadow object-cover border-4 border-white"
+            src="/insta.jpeg"
+            alt="Paloma Freitas"
+          />
         </div>
-        <div  className='pt-3 text-base font-normal text-green-600 pb-2'>
-              Psicóloga Clínica - CRP 02/17441
+
+        <h1 className='text-4xl text-sage-dark mb-1'>
+          Paloma Freitas
+        </h1>
+        <p className='text-sage-medium font-medium tracking-wide uppercase text-xs'>
+          Psicóloga Clínica • CRP 02/17441
+        </p>
+      </section>
+
+      {/* Primary Actions */}
+      <section className='w-full space-y-1 mb-12'>
+        <LinkTreeButton
+          link="https://api.whatsapp.com/send?phone=5581982279499"
+          texto={<><FaWhatsapp className="text-lg" /> Agendar Consulta</>}
+        />
+        <LinkTreeButton
+          link="http://loja.palomafreitas.com"
+          texto={<><FaBook className="text-lg" /> Livros</>}
+        />
+        <LinkTreeDropdown 
+          titulo="Materiais"
+          icone={<FaRegFolderOpen className="text-lg" />}
+          items={[
+            { link: "https://drive.google.com/file/d/1eD84wEuGO3FzD6dG5PF9E5E-4KCBYmPg/view?usp=sharing", texto: "Roda da Vida" },
+            { link: "https://docs.google.com/forms/d/e/1FAIpQLSet4gtutQmYiO1RUGY0ZmpxU5ckjmNdT8IPwFOP-Xe0IyuBAA/viewform", texto: "Grupo - Habilidade pra Vida" },
+            { link: "/oficina", texto: "Oficina - Autoestima Infantil" }
+          ]}
+        />
+        <LinkTreeButton
+          link="http://www.instagram.com/institutoblu/"
+          texto={<><img src="/blublack.png" className="w-7 h-7 object-contain" alt="" /> Instituto Blu</>}
+        />
+      </section>
+
+
+      {/* Social Media */}
+      <section className='text-center w-full'>
+        <h2 className='text-sm font-medium text-sage-medium uppercase tracking-[0.2em] mb-6'>
+          Conecte-se
+        </h2>
+        <div className='flex justify-center gap-6'>
+          <a
+            href="https://instagram.com/palomasfreitas"
+            target="_blank"
+            rel="noopener noreferrer"
+            className='glass-card w-12 h-12 flex items-center justify-center rounded-full text-sage-dark hover:bg-sage-dark hover:text-white transform hover:-translate-y-1'
+            aria-label="Instagram"
+          >
+            <FaInstagram size={20} />
+          </a>
+          <a
+            href="https://palomasfreitas.medium.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className='glass-card w-12 h-12 flex items-center justify-center rounded-full text-sage-dark hover:bg-sage-dark hover:text-white transform hover:-translate-y-1'
+            aria-label="Medium"
+          >
+            <FaMediumM size={20} />
+          </a>
         </div>
-      </div>
-      <LinkTreeButton link="https://drive.google.com/file/d/1eD84wEuGO3FzD6dG5PF9E5E-4KCBYmPg/view?usp=sharing" texto="Roda da Vida" />
-      <LinkTreeButton link="https://docs.google.com/forms/d/e/1FAIpQLSet4gtutQmYiO1RUGY0ZmpxU5ckjmNdT8IPwFOP-Xe0IyuBAA/viewform" texto="Grupo - Habilidade pra Vida" />
-      <LinkTreeButton link="/oficina" texto="Oficina - Construindo a autoestima do seu filho" />
-      <LinkTreeButton link="https://api.whatsapp.com/send?phone=5581996110403" texto="<FaWhatsapp /> Agendamentos" />
-      <LinkTreeButton link="http://www.institutodrtiagoqueiroz.com.br/" texto="Instituto Dr. Tiago Queiroz" />
+      </section>
 
-     
-      
-      
-      
-
-
-
-
-
-      <div className='text-base font-normal pt-6 text-white pb-2'>
-            Redes Sociais
-      </div>
-      <div className='grid grid-rows-1'>
-        <a href="https//instagram.com/palomasfreitas">
-          <div className='hover:bg-pink-500 hover:text-white bg-white text-pink-400'>
-          <FaInstagram />
-          </div>
-        </a>
-        {/* <IconButton _hover={{ bg: 'blue.400', color: '#FFFFFF'}}  bgColor={'white'} color='blue.400' icon={<FaLinkedin />} aria-label={''} /> */}
-        <a href="https://palomasfreitas.medium.com/">
-          <div className='hover:bg-black hover:text-white bg-white text-black'>
-          <FaMediumM />
-          </div>
-        </a>
-
-      </div>
-      
-      
-
-    </div>
-    </>
+      {/* Footer */}
+      <footer className='mt-20 text-[10px] text-sage-medium/60 uppercase tracking-widest'>
+        © {new Date().getFullYear()} Paloma Freitas
+      </footer>
+    </main>
   )
 }

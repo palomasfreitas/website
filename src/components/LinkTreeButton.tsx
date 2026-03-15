@@ -1,12 +1,22 @@
 import React from 'react'
 
-function LinkTreeButton(props:any) {
-  const link = props.link
+function LinkTreeButton({ link, texto }: { link: string, texto: string | React.ReactNode }) {
   return (
-    <div>
-      <a href={link} >
-        <div className='py-4 px-2 m-auto rounded-md mt-2 text-center hover:bg-[#F765A3] hover:text-[#F9D1D1] shadow-2xl text-white bg-[#FFA4B6] min-w-[30%] max-w-[50%]'>
-          <span className=' text-pink-700  hover:text-pink-100'>{props.texto}</span>
+    <div className='w-full max-w-[450px] mx-auto mb-4'>
+      <a 
+        href={link} 
+        className='group block'
+        target={link.startsWith('http') ? '_blank' : '_self'}
+        rel='noopener noreferrer'
+      >
+        <div className='glass-card py-4 px-6 rounded-2xl text-center group-hover:scale-[1.02] group-hover:bg-white/80 group-hover:border-sage-medium/30 group-active:scale-[0.98] transition-all duration-300'>
+          <span className='text-[15px] font-medium text-sage-dark group-hover:text-sage-dark flex items-center justify-center gap-2'>
+            {typeof texto === 'string' && texto.includes('<FaWhatsapp') ? (
+              // This is a hacky fix for the existing string-based icon injection
+              // Ideally this should be passed as a component, but keeping compatibility for now
+              texto.replace('<FaWhatsapp /> ', '')
+            ) : texto}
+          </span>
         </div>
       </a>
     </div>
