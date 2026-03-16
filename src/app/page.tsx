@@ -35,7 +35,7 @@ export default function Home() {
           link="http://loja.palomafreitas.com"
           texto={<><FaBook className="text-lg" /> Livros</>}
         />
-        <LinkTreeDropdown 
+        <LinkTreeDropdown
           titulo="Materiais"
           icone={<FaRegFolderOpen className="text-lg" />}
           items={[
@@ -45,6 +45,11 @@ export default function Home() {
           ]}
         />
         <LinkTreeButton
+          link="http://www.instagram.com/palomasfreitas/"
+          texto={<><FaInstagram size={20} /> Instagram</>}
+        />
+
+        <LinkTreeButton
           link="http://www.instagram.com/institutoblu/"
           texto={<><img src="/blublack.png" className="w-7 h-7 object-contain" alt="" /> Instituto Blu</>}
         />
@@ -52,7 +57,7 @@ export default function Home() {
 
 
       {/* Social Media */}
-      <section className='text-center w-full'>
+      {/* <section className='text-center w-full'>
         <h2 className='text-sm font-medium text-sage-medium uppercase tracking-[0.2em] mb-6'>
           Conecte-se
         </h2>
@@ -76,10 +81,15 @@ export default function Home() {
             <FaMediumM size={20} />
           </a>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
-      <footer className='mt-20 text-[10px] text-sage-medium/60 uppercase tracking-widest'>
+      <footer className='mt-4 text-[10px] text-sage-medium/60 uppercase tracking-widest text-center'>
+        <img
+          src="/logo_paloma.png"
+          alt="Paloma Freitas"
+          className="w-14 mx-auto mb-4 opacity-60"
+        />
         © {new Date().getFullYear()} Paloma Freitas
       </footer>
     </main>
